@@ -6,6 +6,7 @@ import { getUpcomingMovies } from "@/lib/api/get-upcoming-movies";
 import Link from "next/link";
 import { Movie } from "@/types";
 import { MovieCard } from "./MovieCard";
+import { MoviesLouding } from "./MoviesLouding";
 
 export const Upcoming = () => {
   const [upcomingMovies, setUpcomingMovies] = useState<Movie[]>([]);
@@ -24,7 +25,7 @@ export const Upcoming = () => {
     fetchMovies();
     setLoudig(false);
   }, []);
-
+  if(louding) return <MoviesLouding/>
   return (
     <div className="flex flex-col gap-8">
       <div className="flex justify-between">

@@ -14,14 +14,20 @@ export type Movie = {
   video: boolean;
   vote_average: number;
   vote_count: number;
+ 
 };
-export type MoviesResponse = {
-  dates: {
-    maximum: string;
-    minimum: string;
-  };
-  page: number;
-  results: Movie[];
-  total_pages: number;
-  total_results: number;
-};
+// export type MoviesResponse = {
+//   dates: {
+//     maximum: string;
+//     minimum: string;
+//   };
+//   page: number;
+//   results: Movie[];
+//   total_pages: number;
+//   total_results: number;
+// };
+export type MovieId = {
+  id: number
+  name: string
+  key: string
+}
