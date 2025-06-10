@@ -3,16 +3,16 @@ import { Star } from "lucide-react";
 import Link from "next/link";
 import { MovieTrailer } from "./MovieTrailer";
 
-type  MovieCarouselItemProps ={
-    movie: Movie
-    id: number
-}
+type MovieCarouselItemProps = {
+  movie: Movie;
+  
+};
 export const MovieCarouselItem = ({ movie }: MovieCarouselItemProps) => {
   const imgUrl = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}${movie.backdrop_path}`;
   // console.log(imgUrl);
   return (
     <div className="relative">
-      <Link href={`/Details/${movie.id}`}>
+      <Link href={`/details/${movie.id}`}>
         <img
           className="w-screen min-h-[246px]  md:max-h-[600px]"
           src={imgUrl}
@@ -35,9 +35,7 @@ export const MovieCarouselItem = ({ movie }: MovieCarouselItemProps) => {
         <div className="flex w-[350px]">
           <p className="text-[14px]">{movie.overview}</p>
         </div>
-        <MovieTrailer movieId={movie.id} id={movie.id}/>
-
-       
+        <MovieTrailer movieId={movieId} />
       </div>
     </div>
   );

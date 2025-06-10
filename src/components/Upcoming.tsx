@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { MoveRight } from "lucide-react";
 import { getUpcomingMovies } from "@/lib/api/get-upcoming-movies";
-import Link from "next/link";
 import { Movie } from "@/types";
 import { MovieCard } from "./MovieCard";
 import { MoviesLouding } from "./MoviesLouding";
+import Link from "next/link";
 
 export const Upcoming = () => {
   const [upcomingMovies, setUpcomingMovies] = useState<Movie[]>([]);

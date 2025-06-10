@@ -42,7 +42,7 @@ export const MovieCarousel = () => {
         {nowplayingMoveis?.map((movie, index) => (
           <CarouselItem key={index}>
             <div className="p-1">
-              <MovieCarouselItem movie={movie} id={movie.id} />
+              <MovieCarouselItem movie={movie}  />
             </div>
           </CarouselItem>
         ))}

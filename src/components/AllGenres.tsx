@@ -38,7 +38,7 @@
 //     getMovieGenres();
 //   }, []);
 
-//   const handleSelectGenre = (id) => {
+//   const handleSelectGenre = (id: number) => {
 //     const newGenreIds = genreIds.includes(id)
 //       ? genreIds.filter((t) => t !== id)
 //       : [...genreIds, id];
