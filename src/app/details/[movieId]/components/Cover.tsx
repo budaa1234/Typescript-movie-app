@@ -4,17 +4,15 @@ import { Movie } from "@/types";
 import { useEffect, useState } from "react";
 import { MovieTrailer } from "@/components/MovieTrailer";
 import { getMovieById } from "@/lib/api/getMovieById";
+import { Button } from "@/components/ui/button";
 export const Cover = ({ movieId }: { movieId: string }) => {
   const [movie, setMovie] = useState<Movie>();
-
   useEffect(() => {
     if (!movieId) return;
     const getMovie = async () => {
       const data = await getMovieById(movieId);
       console.log(data);
       setMovie(data);
-
-     
     };
      getMovie();
   }, [movieId]);
@@ -57,11 +55,11 @@ export const Cover = ({ movieId }: { movieId: string }) => {
           </div>
         </div>
       </div>
-      {/* <div className="flex p-[20px] gap-8">
+      <div className="flex p-[20px] gap-8">
         <img src={poster} className="w-[100px] h-[148px] md:hidden" />
         <div className="flex flex-col gap-y-4 md:justify-center">
           <div className="flex flex-wrap gap-3">
-            {movie.genres?.map((genre) => (
+            {movie?.genres?.map((genre) => (
               <Button key={genre.id} variant="outline" className="rounded-full h-[20px]">
                 {genre.name}
               </Button>
@@ -69,7 +67,7 @@ export const Cover = ({ movieId }: { movieId: string }) => {
           </div>
           <p className="text-[16px]">{movie?.overview}</p>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

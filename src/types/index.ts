@@ -17,6 +17,7 @@ export type Movie = {
   genre: string;
   name: string;
   key: string;
+  genres: Genre[];
 };
 
 export type MoviesResponse = {
@@ -61,15 +62,35 @@ export type MovieDetails = {
   vote_average: number;
   vote_count: number;
 };
-export type MovieTrailerProps = {
-  id: string;
-  iso_639_1: string;
-  iso_3166_1: string;
-  key: string;
-  name: string;
-  official: boolean;
-  published_at: string;
-  site: string;
-  size: number;
-  type: string;
-};
+export type Director = {
+  cast: Cast[]
+  crew: Crew[]
+  id: number
+}
+export type Cast ={
+  adult: false
+cast_id: number
+character: string
+credit_id: string
+gender: 1
+id: number
+known_for_department: string
+name: string
+order: 0
+original_name: string
+popularity: number
+profile_path: string
+}
+export type Crew ={
+  adult: false
+credit_id: string
+department: string
+gender: number
+id: number
+job: string
+known_for_department: string
+name: string
+original_name: string
+popularity: number
+profile_path: null
+}

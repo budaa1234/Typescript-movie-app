@@ -1,6 +1,8 @@
-export const getTopRatedMovies = async () => {
+import { MoviesResponse } from "@/types"
+
+export const getTopRatedMovies = async (page = 1) => {
     const response = await fetch(
-    `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}movie/top_rated?language=en-US&page=1`,
+    `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}movie/top_rated?language=en-US&page=${page}`,
     {
         method: "GET",
         headers: {
@@ -11,6 +13,6 @@ export const getTopRatedMovies = async () => {
     )
     const data = await response.json()
 
-    return data
+    return data as MoviesResponse
     
 }

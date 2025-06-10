@@ -1,4 +1,6 @@
-export const getUpcomingMovies = async (page = 1) => {
+import { MoviesResponse } from "@/types";
+
+export const getUpcomingMovies = async (page=1) => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}movie/upcoming?language=en-US&page=${page}`,
     {
@@ -11,5 +13,5 @@ export const getUpcomingMovies = async (page = 1) => {
   );
   const data = await response.json();
   
-  return data 
+  return data as MoviesResponse
 };

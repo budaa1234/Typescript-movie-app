@@ -1,13 +1,14 @@
-import { Movie } from "@/types";
+import { MovieDetails } from "@/types";
 import { Star } from "lucide-react";
 import Link from "next/link";
 import { MovieTrailer } from "./MovieTrailer";
 
-type MovieCarouselItemProps = {
-  movie: Movie;
-  
-};
-export const MovieCarouselItem = ({ movie }: MovieCarouselItemProps) => {
+type MovieCarouselItemProps ={
+  movie: MovieDetails
+  id: number
+}
+
+export const MovieCarouselItem = ({ movie}: MovieCarouselItemProps) => {
   const imgUrl = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}${movie.backdrop_path}`;
   // console.log(imgUrl);
   return (
@@ -35,7 +36,7 @@ export const MovieCarouselItem = ({ movie }: MovieCarouselItemProps) => {
         <div className="flex w-[350px]">
           <p className="text-[14px]">{movie.overview}</p>
         </div>
-        <MovieTrailer movieId={movieId} />
+        <MovieTrailer movieId={String(movie.id)} />
       </div>
     </div>
   );

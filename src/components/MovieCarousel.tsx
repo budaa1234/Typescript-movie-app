@@ -8,13 +8,14 @@ import {
   CarouselPrevious,
 } from "./ui/carousel";
 import { MovieCarouselItem } from "./MovieCarouselItem";
-import { Movie } from "@/types";
+import {  MovieDetails } from "@/types";
 import { useEffect, useState } from "react";
-import { getNowPlayingMovies} from "@/lib/api/get-nowPlaying-movies"
+
 import { CarouselLouding } from "./CarouselLouding";
+import { getNowPlayingMovies } from "@/lib/api/get-nowPlaying-movies";
 
 export const MovieCarousel = () => {
-    const [nowplayingMoveis, setNowPlayingMovies]=useState<Movie[]>([])
+    const [nowplayingMoveis, setNowPlayingMovies]=useState<MovieDetails[]>([])
     const [louding, setLouding] = useState(false)
     useEffect(()=>{
       setLouding(true)
@@ -42,7 +43,7 @@ export const MovieCarousel = () => {
         {nowplayingMoveis?.map((movie, index) => (
           <CarouselItem key={index}>
             <div className="p-1">
-              <MovieCarouselItem movie={movie}  />
+              <MovieCarouselItem movie={movie} id={movie.id}/>
             </div>
           </CarouselItem>
         ))}

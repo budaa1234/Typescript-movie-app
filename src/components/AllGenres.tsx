@@ -4,10 +4,11 @@
 // import { Button } from "./ui/button";
 // import { parseAsArrayOf, parseAsInteger, useQueryState } from "nuqs";
 // import { ChevronRight } from "lucide-react";
+// import { MovieDetails } from "@/types";
 
 // export const AllGenres = () => {
 //   const router = useRouter();
-//   const [genres, setGenres] = useState([]);
+//   const [genres, setGenres] = useState<MovieDetails[]>([]);
 
 //   const [genreIds, setGenreIds] = useQueryState(
 //     "genreIds",

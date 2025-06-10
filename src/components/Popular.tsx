@@ -1,12 +1,13 @@
 "use client";
 import { MoveRight } from "lucide-react";
 import { Button } from "./ui/button";
-import { getPopularMovies } from "@/lib/api/get-popular-movies";
+
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { MovieCard } from "./MovieCard";
 import { Movie } from "@/types";
 import { MoviesLouding } from "./MoviesLouding";
+import { getPopularMovies } from "@/lib/api/get-popular-movies";
 export const Popular = () => {
   const [popularMovies, setPopularMovies] = useState<Movie[]>([]);
   const [louding, setLouding] = useState(false);
