@@ -3,15 +3,16 @@ import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
-import { MoviesResponse } from "@/types";
-// import { SearchResult } from "./SearchResult";
+import { Movie} from "@/types";
+import { SearchResult } from "./SearchResult";
+
 
 
 export const HomeSearch = () => {
   const [searchValue, setSearchValue] = useState("");
  
   
-  const [movies, setMovies] = useState<MoviesResponse[]>([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
   
   const searchMovie = async () => {
     try {
@@ -30,7 +31,7 @@ export const HomeSearch = () => {
       
       
 
-      setMovies(data?.results)
+      setMovies(data.results)
       console.log(data);
       
     } catch (error) {
@@ -51,9 +52,9 @@ export const HomeSearch = () => {
         className={cn("pl-[38px]", "rounded-lg shadow-sm border-none", "h-[36px]")}
       />
      
-      {/* {movies?.length > 0 && (
+      {movies?.length > 0 && (
         <SearchResult movies={movies} setSearchValue={setSearchValue} />
-      )} */}
+      )}
     </div>
   );
 };
