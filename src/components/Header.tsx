@@ -2,10 +2,11 @@ import { Search, Film } from "lucide-react";
 import Link from "next/link";
 // import { HeaderGenre } from "./HeaderGenre";
 
-// import { HomeSearch } from "./Search";
+
 import { cn } from "@/lib/utils";
 import { HeaderGenre } from "./HeaderGenre";
 import { ModeToggle } from "./ModeToggle";
+import { HomeSearch } from "./Search";
 
 export const Header = () => {
   return (
@@ -32,7 +33,7 @@ export const Header = () => {
                 size={16}
                 className="absolute -translate-y-1/2 left-3 top-1/2"
               />
-              {/* <HomeSearch /> */}
+              <HomeSearch />
             </div>
           </div>
         </div>

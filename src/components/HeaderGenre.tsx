@@ -1,6 +1,4 @@
 import { ChevronDown } from "lucide-react";
-// import { AllGenres } from "./AllGenres";
-
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,6 +6,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { AllGenres } from "./AllGenres";
 
 export const HeaderGenre = () => {
   return (
@@ -21,7 +20,7 @@ export const HeaderGenre = () => {
         <p>See lists of movies by genre</p>
         <DropdownMenuSeparator className="my-4" />
         <DropdownMenuItem className="p-0 hover:!bg-transparent">
-          {/* <AllGenres /> */}
+          <AllGenres />
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
