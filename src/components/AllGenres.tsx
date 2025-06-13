@@ -53,7 +53,7 @@ export const AllGenres = () => {
 
   return (
     <div className="flex flex-wrap gap-4 w-[387px]">
-      {genres?.map((genre) => {
+      {genres?.map((genre, i) => {
         const isSelected = genreIds?.includes(genre.id);
         return (
           <Button
@@ -61,6 +61,7 @@ export const AllGenres = () => {
             className={`w-fit bg-white text-foreground hover:bg-none text-[12px] font-bold h-[20px] ${
               isSelected ? "bg-blue-600" : "bg-white"
             }`}
+            key={i}
             onClick={() => handleSelectGenre(genre.id)}
           >
             {genre.name}

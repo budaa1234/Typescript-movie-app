@@ -46,8 +46,8 @@ const Genres = () => {
         </div>
         <Separator orientation="vertical" className="h-full mx-4" />
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center ">
-          {genreMovies?.results?.map((movie) => (
-            <MovieCard movie={movie} id={movie.id} />
+          {genreMovies?.results?.map((movie, i) => (
+            <MovieCard movie={movie} id={movie.id} key={i}/>
           ))}
         </div>
       </div>

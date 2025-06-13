@@ -1,6 +1,7 @@
 "use client"
 import { getDirector } from "@/lib/api/get-director";
 import { Director } from "@/types";
+import { Key } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export const StaffImformation = ({id}: {id: string}) => {
@@ -38,21 +39,21 @@ export const StaffImformation = ({id}: {id: string}) => {
     <div className="flex-col  flex gap-y-[33px]">
       <div className="flex px-[20px] gap-13  border-b">
         <p className="text-[16px] font-bold">Director</p>
-        {directors?.slice(0, 1).map((director) => (
-          <p className="text-[16px]">{director?.name}</p>
+        {directors?.slice(0, 1).map((director, i) => (
+          <p className="text-[16px]"key={i}>{director?.name}</p>
         ))}
       </div>
 
       <div className="flex px-[10px] gap-13 border-b">
         <p className="text-[16px] font-bold ">Writers</p>
-        {writers?.slice(0, 3).map((writer) => (
-          <p className="text-[16px]">{writer?.name}</p>
+        {writers?.slice(0, 3).map((writer, i) => (
+          <p className="text-[16px]" key={i}>{writer?.name}</p>
         ))}
       </div>
       <div className="flex px-[20px] gap-13  border-b">
         <p className="text-[16px] font-bold ">Stars</p>
-        {stars?.slice(0, 3).map((star) => (
-          <p className="text-[16px]">{star?.name}</p>
+        {stars?.slice(0, 3).map((star, i) => (
+          <p className="text-[16px]" key={i}>{star?.name}</p>
         ))}
       </div>
     </div>
